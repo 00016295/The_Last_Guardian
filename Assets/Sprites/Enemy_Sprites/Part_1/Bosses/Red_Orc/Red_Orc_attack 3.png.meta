@@ -118,12 +118,12 @@ TextureImporter:
       name: Red_Orc_attack 3_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 9
-        width: 78
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 119
+        height: 104
+      alignment: 9
+      pivot: {x: 0.39440453, y: 0.5214801}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: Red_Orc_attack 3_1
       rect:
         serializedVersion: 2
-        x: 133
-        y: 9
-        width: 80
-        height: 91
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 119
+        y: 0
+        width: 119
+        height: 104
+      alignment: 9
+      pivot: {x: 0.42960286, y: 0.51074004}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Red_Orc_attack 3_2
       rect:
         serializedVersion: 2
-        x: 258
-        y: 9
-        width: 88
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 238
+        y: 0
+        width: 119
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5023463, y: 0.52953506}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Red_Orc_attack 3_3
       rect:
         serializedVersion: 2
-        x: 336
-        y: 43
-        width: 11
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 357
+        y: 0
+        width: 119
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5070393, y: 0.54564524}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,55 +202,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Red_Orc_attack 3_4
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 40
-        width: 13
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cd0baaef46bc4cdd0800000000000000
-      internalID: -2466623061262421796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red_Orc_attack 3_5
-      rect:
-        serializedVersion: 2
-        x: 375
-        y: 9
-        width: 83
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb7a8d4ad851e5c50800000000000000
-      internalID: 6655780997400405948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 91e5dfbe9938e7e41bcc7d69d5923969
     internalID: 0
     vertices: []
     indices: 
@@ -258,14 +214,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":119.0,"y":104.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Red_Orc_attack 3_0: -5908665447923268534
       Red_Orc_attack 3_1: -1878920129798578883
       Red_Orc_attack 3_2: -2197715729585870215
       Red_Orc_attack 3_3: -7907870633809124311
-      Red_Orc_attack 3_4: -2466623061262421796
-      Red_Orc_attack 3_5: 6655780997400405948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

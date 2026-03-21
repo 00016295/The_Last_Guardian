@@ -290,12 +290,12 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             rb.gravityScale = 0f;
-            // Set the Rigidbody2D to Kinematic to prevent physics interactions while climbing
+            // Важно: на время анимации делаем тело Kinematic, чтобы оно игнорировало все силы
             if (rb.bodyType != RigidbodyType2D.Kinematic) rb.bodyType = RigidbodyType2D.Kinematic;
             return;
         }
 
-        // If the Rigidbody2D is Kinematic and the player is not ledge climbing, set it back to Dynamic to allow physics interactions
+        // Если не подтягиваемся, возвращаем Dynamic
         if (rb.bodyType == RigidbodyType2D.Kinematic && !isLedgeClimbing)
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
@@ -311,9 +311,9 @@ public class Player : MonoBehaviour
         {
             rb.gravityScale = 1f;
 
-            if (isDodging) return; // During a dodge, we don't want to apply normal movement
+            if (isDodging) return; // Если катимся — физику движения не трогаем
 
-            // If the player is not blocking, apply horizontal movement; if blocking, set horizontal velocity to zero
+            // Если не в блоке — двигаемся, если в блоке — стоим
             if (!isBlocking)
             {
                 rb.linearVelocity = new Vector2(movement * speed, rb.linearVelocity.y);
@@ -448,7 +448,7 @@ public class Player : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        if(isBlocking && isDodging)
+        if(isBlocking || isDodging)
         {
             Debug.Log("Атака заблокирована!");
             return; // No damage taken if blocking
@@ -473,7 +473,7 @@ public class Player : MonoBehaviour
     }
     void Die()
     {
-        GetComponent<SpriteRenderer>().color = Color.white;
+        Debug.Log("Enemy has died"); // Log message for debugging purposes
         Destroy(gameObject); // Destroy the enemy game object
     }
 
@@ -492,11 +492,15 @@ public class Player : MonoBehaviour
         if (dodgeDirection > 0 && !isFacingRight) flip();
         else if (dodgeDirection < 0 && isFacingRight) flip();
 
+        // for the duration of the dodge, ignore collisions between the player and enemies
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         float originalGravity = rb.gravityScale;
         
         rb.linearVelocity = new Vector2(dodgeDirection * dodge_force, 0f);
 
         yield return new WaitForSeconds(dodge_duration);
+        // After the dodge duration, re-enable collisions and reset the player's state
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
         rb.gravityScale = originalGravity;
         isDodging = false;
     }
@@ -506,23 +510,23 @@ public class Player : MonoBehaviour
         isClimbing = false;
         animator.SetBool("is_climbing", false);
 
-        
+        // 1. Полностью выключаем физику и управление
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
 
-        
-        animator.Play("Player_pullup"); 
+        // 2. Запускаем анимацию
+        animator.Play("Player_pullup"); // Используем Play вместо Trigger для надежности
 
-        
+        // 3. Ждем (на видео твоя анимация длится примерно 0.6-0.8 сек)
         yield return new WaitForSeconds(0.61f);
 
-      
+        // 4. Перемещаем
         float direction = isFacingRight ? 1f : -1f;
         transform.position += new Vector3(ledgeOffset.x * direction, ledgeOffset.y, 0);
 
-        
+        // 5. Возвращаем всё как было
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.linearVelocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero; // Сбрасываем скорость после телепортации
         isLedgeClimbing = false;
 
         Debug.Log("Залез!");

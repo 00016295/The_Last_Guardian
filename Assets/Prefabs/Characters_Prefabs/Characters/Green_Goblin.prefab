@@ -132,6 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8dd2ea3ba292e4c93f9c1072cafc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHealth: 15
+  attackCooldown: 2
   patrolSpeed: 1
   detectPoint: {fileID: 6646598742091816060}
   distance: 1
@@ -253,7 +255,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.80144787, y: 0.6705828}
+  m_Offset: {x: 0.6390662, y: 0.6705828}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.34157965, y: 0.4790675}
@@ -263,7 +265,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10, y: 3.0568557}
+  m_Size: {x: 4.1078687, y: 3.0568557}
   m_EdgeRadius: 0
 --- !u!1 &6492760956404360822
 GameObject:
