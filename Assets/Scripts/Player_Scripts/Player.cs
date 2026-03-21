@@ -290,12 +290,12 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             rb.gravityScale = 0f;
-            // Важно: на время анимации делаем тело Kinematic, чтобы оно игнорировало все силы
+            // Set the Rigidbody2D to Kinematic to prevent physics interactions while climbing
             if (rb.bodyType != RigidbodyType2D.Kinematic) rb.bodyType = RigidbodyType2D.Kinematic;
             return;
         }
 
-        // Если не подтягиваемся, возвращаем Dynamic
+        // If the Rigidbody2D is Kinematic and the player is not ledge climbing, set it back to Dynamic to allow physics interactions
         if (rb.bodyType == RigidbodyType2D.Kinematic && !isLedgeClimbing)
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
@@ -311,9 +311,9 @@ public class Player : MonoBehaviour
         {
             rb.gravityScale = 1f;
 
-            if (isDodging) return; // Если катимся — физику движения не трогаем
+            if (isDodging) return; // During a dodge, we don't want to apply normal movement
 
-            // Если не в блоке — двигаемся, если в блоке — стоим
+            // If the player is not blocking, apply horizontal movement; if blocking, set horizontal velocity to zero
             if (!isBlocking)
             {
                 rb.linearVelocity = new Vector2(movement * speed, rb.linearVelocity.y);
@@ -473,7 +473,7 @@ public class Player : MonoBehaviour
     }
     void Die()
     {
-        Debug.Log("Enemy has died"); // Log message for debugging purposes
+        GetComponent<SpriteRenderer>().color = Color.white;
         Destroy(gameObject); // Destroy the enemy game object
     }
 
@@ -506,23 +506,23 @@ public class Player : MonoBehaviour
         isClimbing = false;
         animator.SetBool("is_climbing", false);
 
-        // 1. Полностью выключаем физику и управление
+        
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
 
-        // 2. Запускаем анимацию
-        animator.Play("Player_pullup"); // Используем Play вместо Trigger для надежности
+        
+        animator.Play("Player_pullup"); 
 
-        // 3. Ждем (на видео твоя анимация длится примерно 0.6-0.8 сек)
+        
         yield return new WaitForSeconds(0.61f);
 
-        // 4. Перемещаем
+      
         float direction = isFacingRight ? 1f : -1f;
         transform.position += new Vector3(ledgeOffset.x * direction, ledgeOffset.y, 0);
 
-        // 5. Возвращаем всё как было
+        
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.linearVelocity = Vector2.zero; // Сбрасываем скорость после телепортации
+        rb.linearVelocity = Vector2.zero;
         isLedgeClimbing = false;
 
         Debug.Log("Залез!");

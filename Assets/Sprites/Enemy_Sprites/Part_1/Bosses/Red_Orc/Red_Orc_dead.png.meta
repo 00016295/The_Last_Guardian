@@ -115,12 +115,12 @@ TextureImporter:
       name: Red_Orc_dead_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 7
-        width: 53
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 126
+        height: 102
+      alignment: 9
+      pivot: {x: 0.33901185, y: 0.51807886}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,12 +137,12 @@ TextureImporter:
       name: Red_Orc_dead_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 7
-        width: 54
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 126
+        y: 0
+        width: 126
+        height: 102
+      alignment: 9
+      pivot: {x: 0.32437655, y: 0.514463}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: Red_Orc_dead_2
       rect:
         serializedVersion: 2
-        x: 266
-        y: 7
-        width: 67
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 252
+        y: 0
+        width: 126
+        height: 102
+      alignment: 9
+      pivot: {x: 0.45609418, y: 0.50723153}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: Red_Orc_dead_3
       rect:
         serializedVersion: 2
-        x: 392
-        y: 7
-        width: 68
-        height: 78
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 378
+        y: 0
+        width: 121
+        height: 102
+      alignment: 9
+      pivot: {x: 0.47109228, y: 0.49999997}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: Red_Orc_dead_4
       rect:
         serializedVersion: 2
-        x: 500
-        y: 7
-        width: 107
-        height: 23
+        x: 499
+        y: 0
+        width: 131
+        height: 102
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2eea55f4aa503594e81160e67d7cb413
     internalID: 0
     vertices: []
     indices: 
@@ -233,7 +233,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":126.0,"y":102.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Red_Orc_dead_0: 8879840749067350718
       Red_Orc_dead_1: 271471549417973166
