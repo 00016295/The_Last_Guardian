@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // Health variables
     public Slider healthBar;
-
+    private int currentHealth;
 
     // Components
     public int maxHealth = 100;
@@ -73,8 +73,9 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth; 
         healthBar.maxValue = maxHealth;
-        healthBar.value = maxHealth;
+        healthBar.value = currentHealth; ;
         movement = 0f;
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         isFacingRight = true;
@@ -89,7 +90,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (maxHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die(); 
         }
@@ -465,20 +466,20 @@ public class Player : MonoBehaviour
             
             return; // No damage taken if blocking
         }
-        if(maxHealth <= 0)
+        if(currentHealth <= 0)
         {
             healthBar.value = 0;
         }
 
-        if (maxHealth <= 0 || maxHealth <= 1)
+        if (currentHealth <= 0 || currentHealth <= 1)
         {
             Die(); 
             return;
         }
-        maxHealth -= damage; // Reduce the enemy's health by the damage amount
-        healthBar.value = maxHealth; // Update the health bar UI
+        currentHealth -= damage; // Reduce the enemy's health by the damage amount
+        healthBar.value = currentHealth; // Update the health bar UI
         animator.SetTrigger("Damage"); // Trigger the "Hurt" animation in the Animator
-        if (maxHealth <= 0)
+        if (currentHealth <= 0)
         {
             return; // Call the Die method if health is zero or less
         }
@@ -494,6 +495,20 @@ public class Player : MonoBehaviour
     {
         comboStep = 0;
 
+    }
+    // Method to heal the player by a specified amount
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+
+       
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        healthBar.value = currentHealth;
+        Debug.Log("Полечился! Текущее здоровье: " + currentHealth);
     }
 
     IEnumerator Dodge(float inputDir)
@@ -542,7 +557,8 @@ public class Player : MonoBehaviour
         Debug.Log("Залез!");
     }
 
-
+    
+   
 
     // Method to handle collision with the ground and reset jumps
     private void OnCollisionEnter2D(Collision2D collision)

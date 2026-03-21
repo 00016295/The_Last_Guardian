@@ -164,10 +164,20 @@ public class Boss : MonoBehaviour
 
     IEnumerator ExecuteDeath()
     {
-        animator.SetBool("Is_Dead", true); // Твой параметр "Is_Dead"
+        animator.SetBool("Is_Dead", true);
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        //else
+        //{
+        //    Debug.Log("Игра окончена! Вы победили всех.");
+        //    SceneManager.LoadScene("MainMenu"); 
+        //}
+
     }
 
     private void OnDrawGizmosSelected()
