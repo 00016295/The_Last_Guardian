@@ -121,12 +121,12 @@ TextureImporter:
       name: Red_Orc_idle_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 7
-        width: 66
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 119
+        height: 114
+      alignment: 9
+      pivot: {x: 0.31468374, y: 0.50859743}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,12 +143,12 @@ TextureImporter:
       name: Red_Orc_idle_1
       rect:
         serializedVersion: 2
-        x: 124
-        y: 7
-        width: 66
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 119
+        y: 0
+        width: 119
+        height: 114
+      alignment: 9
+      pivot: {x: 0.33527446, y: 0.4999999}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: Red_Orc_idle_2
       rect:
         serializedVersion: 2
-        x: 247
-        y: 7
-        width: 66
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 238
+        y: 0
+        width: 119
+        height: 114
+      alignment: 9
+      pivot: {x: 0.3764556, y: 0.4999999}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +187,12 @@ TextureImporter:
       name: Red_Orc_idle_3
       rect:
         serializedVersion: 2
-        x: 370
-        y: 7
-        width: 66
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 357
+        y: 0
+        width: 119
+        height: 114
+      alignment: 9
+      pivot: {x: 0.42587307, y: 0.4999999}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: Red_Orc_idle_4
       rect:
         serializedVersion: 2
-        x: 493
-        y: 7
-        width: 66
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 476
+        y: 0
+        width: 119
+        height: 114
+      alignment: 9
+      pivot: {x: 0.4547001, y: 0.4999999}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Red_Orc_idle_5
       rect:
         serializedVersion: 2
-        x: 616
-        y: 7
-        width: 66
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 595
+        y: 0
+        width: 119
+        height: 114
+      alignment: 9
+      pivot: {x: 0.47117242, y: 0.50429857}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,12 +253,12 @@ TextureImporter:
       name: Red_Orc_idle_6
       rect:
         serializedVersion: 2
-        x: 740
-        y: 7
-        width: 65
-        height: 105
+        x: 714
+        y: 0
+        width: 119
+        height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1448fe7a3c7a9b64891615fa57aa1450
     internalID: 0
     vertices: []
     indices: 
@@ -283,7 +283,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":119.0,"y":114.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Red_Orc_idle_0: -1937588701836243125
       Red_Orc_idle_1: 2891437040883309026

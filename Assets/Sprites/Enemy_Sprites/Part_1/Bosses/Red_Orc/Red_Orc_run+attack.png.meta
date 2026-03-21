@@ -121,12 +121,12 @@ TextureImporter:
       name: Red_Orc_run+attack_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 9
-        width: 56
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 104
+        height: 113
+      alignment: 9
+      pivot: {x: 0.42042908, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,12 +143,12 @@ TextureImporter:
       name: Red_Orc_run+attack_1
       rect:
         serializedVersion: 2
-        x: 110
-        y: 9
-        width: 75
-        height: 99
+        x: 104
+        y: 0
+        width: 122
+        height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: Red_Orc_run+attack_2
       rect:
         serializedVersion: 2
-        x: 230
-        y: 9
-        width: 77
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 226
+        y: 0
+        width: 125
+        height: 113
+      alignment: 9
+      pivot: {x: 0.4393137, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +187,12 @@ TextureImporter:
       name: Red_Orc_run+attack_3
       rect:
         serializedVersion: 2
-        x: 361
-        y: 10
-        width: 78
-        height: 98
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 352
+        y: 0
+        width: 117
+        height: 113
+      alignment: 9
+      pivot: {x: 0.42927018, y: 0.49999997}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: Red_Orc_run+attack_4
       rect:
         serializedVersion: 2
-        x: 429
-        y: 85
-        width: 19
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 468
+        y: 0
+        width: 117
+        height: 113
+      alignment: 9
+      pivot: {x: 0.4970531, y: 0.49999997}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -227,55 +227,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Red_Orc_run+attack_5
-      rect:
-        serializedVersion: 2
-        x: 430
-        y: 61
-        width: 35
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a25c0062064209170800000000000000
-      internalID: 8183080518305236266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Red_Orc_run+attack_6
-      rect:
-        serializedVersion: 2
-        x: 484
-        y: 10
-        width: 84
-        height: 97
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ba1b0c6c8d6b7a570800000000000000
-      internalID: 8477945865711956395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4eb1fd2d6ab49f24a97b43311da45dbb
     internalID: 0
     vertices: []
     indices: 
@@ -283,15 +239,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":117.0,"y":113.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Red_Orc_run+attack_0: -767287274052505450
       Red_Orc_run+attack_1: 6297299503254983232
       Red_Orc_run+attack_2: -6664768757858819677
       Red_Orc_run+attack_3: 7006383972510863287
       Red_Orc_run+attack_4: -6537938243923040085
-      Red_Orc_run+attack_5: 8183080518305236266
-      Red_Orc_run+attack_6: 8477945865711956395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
