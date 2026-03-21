@@ -1,9 +1,13 @@
+
+using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class Boss : MonoBehaviour
 {
+    public GameObject ArenaWalls;
+
     // Health Settings
     public int maxHealth = 100;
     public GameObject healthBarUI; 
@@ -34,6 +38,7 @@ public class Boss : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         if (healthBarUI != null) healthBarUI.SetActive(false); // Прячем UI в начале
+        if (ArenaWalls != null) ArenaWalls.SetActive(true);
     }
 
     void Update()
@@ -137,6 +142,8 @@ public class Boss : MonoBehaviour
         {
             isPlayerInAttackRange = true;
             if (healthBarUI != null) healthBarUI.SetActive(true); // Показываем здоровье
+
+            if (ArenaWalls != null) ArenaWalls.SetActive(true);
         }
     }
 
@@ -148,7 +155,7 @@ public class Boss : MonoBehaviour
             if (healthBarUI != null) healthBarUI.SetActive(false); // Прячем здоровье
         }
     }
-
+    
     void Die()
     {
         if (healthBarUI != null) healthBarUI.SetActive(false);
@@ -159,7 +166,8 @@ public class Boss : MonoBehaviour
     {
         animator.SetBool("Is_Dead", true); // Твой параметр "Is_Dead"
         yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     private void OnDrawGizmosSelected()
