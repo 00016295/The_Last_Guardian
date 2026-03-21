@@ -1,10 +1,55 @@
 fileFormatVersion: 2
-guid: 79c5d6c06c8d5fc42a1e2c55d178ec1c
+guid: 2c0507f6194ed134fbe0aa0932159ee5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3488240089490820101
-    second: image-Photoroom (2)_0
+      213: 264622006039281261
+    second: The Last Guardian-Photoroom_0
+  - first:
+      213: 7594239218201109741
+    second: The Last Guardian-Photoroom_1
+  - first:
+      213: -7083008545324484978
+    second: The Last Guardian-Photoroom_2
+  - first:
+      213: -8870264514742064011
+    second: The Last Guardian-Photoroom_3
+  - first:
+      213: 5398545119034487955
+    second: The Last Guardian-Photoroom_4
+  - first:
+      213: 8063992603467504328
+    second: The Last Guardian-Photoroom_5
+  - first:
+      213: -7587441000586466628
+    second: The Last Guardian-Photoroom_6
+  - first:
+      213: 6956232745028269527
+    second: The Last Guardian-Photoroom_7
+  - first:
+      213: -5507183240673517183
+    second: The Last Guardian-Photoroom_8
+  - first:
+      213: 8295018004221013999
+    second: The Last Guardian-Photoroom_9
+  - first:
+      213: -2280845803080148982
+    second: The Last Guardian-Photoroom_10
+  - first:
+      213: 1016479942986705966
+    second: The Last Guardian-Photoroom_11
+  - first:
+      213: -5930364935798294933
+    second: The Last Guardian-Photoroom_12
+  - first:
+      213: -7355713554957203839
+    second: The Last Guardian-Photoroom_13
+  - first:
+      213: 7125610044260119451
+    second: The Last Guardian-Photoroom_14
+  - first:
+      213: -5748663062222841509
+    second: The Last Guardian-Photoroom_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +145,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Settings_button_0
+      name: The Last Guardian-Photoroom_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 753
-        height: 328
+        width: 1280
+        height: 720
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 071a13ec122d2c54fa284b16b43fdef7
-      internalID: 1804501377
+      spriteID: d6ef8bdff402ca300800000000000000
+      internalID: 264622006039281261
       vertices: []
       indices: 
       edges: []
@@ -125,7 +170,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3aa34f3c706c9964082e3c2a65834cb7
+    spriteID: 30b8801d9c06b3346956216e21be6401
     internalID: 0
     vertices: []
     indices: 
@@ -135,9 +180,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":753.0,"y":328.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1280.0,"y":720.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Settings_button_0: 1804501377
+      The Last Guardian-Photoroom_0: 264622006039281261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

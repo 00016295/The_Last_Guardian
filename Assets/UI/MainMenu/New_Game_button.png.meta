@@ -1,55 +1,10 @@
 fileFormatVersion: 2
-guid: 584ff2384831e6a43a4d01cc1a973dfc
+guid: b3a219248714a34419208f6eec6422e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 264622006039281261
-    second: The Last Guardian-Photoroom_0
-  - first:
-      213: 7594239218201109741
-    second: The Last Guardian-Photoroom_1
-  - first:
-      213: -7083008545324484978
-    second: The Last Guardian-Photoroom_2
-  - first:
-      213: -8870264514742064011
-    second: The Last Guardian-Photoroom_3
-  - first:
-      213: 5398545119034487955
-    second: The Last Guardian-Photoroom_4
-  - first:
-      213: 8063992603467504328
-    second: The Last Guardian-Photoroom_5
-  - first:
-      213: -7587441000586466628
-    second: The Last Guardian-Photoroom_6
-  - first:
-      213: 6956232745028269527
-    second: The Last Guardian-Photoroom_7
-  - first:
-      213: -5507183240673517183
-    second: The Last Guardian-Photoroom_8
-  - first:
-      213: 8295018004221013999
-    second: The Last Guardian-Photoroom_9
-  - first:
-      213: -2280845803080148982
-    second: The Last Guardian-Photoroom_10
-  - first:
-      213: 1016479942986705966
-    second: The Last Guardian-Photoroom_11
-  - first:
-      213: -5930364935798294933
-    second: The Last Guardian-Photoroom_12
-  - first:
-      213: -7355713554957203839
-    second: The Last Guardian-Photoroom_13
-  - first:
-      213: 7125610044260119451
-    second: The Last Guardian-Photoroom_14
-  - first:
-      213: -5748663062222841509
-    second: The Last Guardian-Photoroom_15
+      213: 518473965357696961
+    second: The Last Guardian (1)-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -145,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: The Last Guardian-Title_0
+      name: New_Game_button_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 720
+        x: 299
+        y: 258
+        width: 682
+        height: 198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef13729094ae0834dabbcbcc36ad18a5
-      internalID: -1228507883
+      spriteID: 465fb951dfba33441b26dc405bb5c8ed
+      internalID: -562727903
       vertices: []
       indices: 
       edges: []
@@ -170,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e00b13e3e2245f74da3278682757fdca
+    spriteID: ce1716f6f4d441e4dbdf6bba471956e6
     internalID: 0
     vertices: []
     indices: 
@@ -182,7 +137,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1280.0,"y":720.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      The Last Guardian-Title_0: -1228507883
+      New_Game_button_0: -562727903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9316af393031b98489bbcdb418672c7a
+guid: 462c6098bd7b8074fb408a3a16a162c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1910438696074212135
-    second: image-Photoroom (3)_0
+      213: 1894282979443123661
+    second: The Last Guardian (7)-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image-Photoroom (3)_0
+      name: The Last Guardian (7)-Photoroom_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 698
-        height: 288
+        x: 299
+        y: 258
+        width: 682
+        height: 198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 723f9a44fdd338a10800000000000000
-      internalID: 1910438696074212135
+      spriteID: dc5a6cd5558d94a10800000000000000
+      internalID: 1894282979443123661
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bfd9550c61f6a4747ab2887aef2e07f4
+    spriteID: 61936a117c94b824380ae3c23c7f98c1
     internalID: 0
     vertices: []
     indices: 
@@ -135,9 +135,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":698.0,"y":288.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1280.0,"y":720.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      image-Photoroom (3)_0: 1910438696074212135
+      The Last Guardian (7)-Photoroom_0: 1894282979443123661
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

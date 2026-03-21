@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b3a219248714a34419208f6eec6422e6
+guid: 829230fba8c37f24abeec896bdbec1fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 518473965357696961
-    second: The Last Guardian (1)-Photoroom_0
+      213: -4375600325918793830
+    second: The Last Guardian (8)-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New_Game_button_0
+      name: The Last Guardian (8)-Photoroom_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1280
-        height: 720
+        x: 298
+        y: 257
+        width: 684
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 465fb951dfba33441b26dc405bb5c8ed
-      internalID: -562727903
+      spriteID: a9fd68ebfaeb643c0800000000000000
+      internalID: -4375600325918793830
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ce1716f6f4d441e4dbdf6bba471956e6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -133,11 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1280.0,"y":720.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      New_Game_button_0: -562727903
+      The Last Guardian (8)-Photoroom_0: -4375600325918793830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
