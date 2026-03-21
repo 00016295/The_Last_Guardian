@@ -1,21 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Boss : MonoBehaviour
 {
-    [Header("Health Settings")]
+    // Health Settings
     public int maxHealth = 15;
-    public GameObject healthBarUI; // ПЕРЕТАЩИ СЮДА КАНВАС ЗДОРОВЬЯ В ИНСПЕКТОРЕ
+    public GameObject healthBarUI; 
     private bool isDead = false;
+    public Slider healthBar;
 
-    [Header("Attack Settings")]
-    public float attackCooldown = 1f; // Твоя задержка в 1 секунду
-    private float nextAttackTime = 0f;
+
+    // Attack Settings
+    public float attackCooldown = 5f;
+    private float nextAttackTime = 1f;
     public Transform attackPoint;
     public float attackRadius = 1f;
     public LayerMask whatIsPlayer;
 
-    [Header("Movement Settings")]
+    // Movement Settings
     public float chaseSpeed = 3.5f;
     public float retrieveDistance = 1.5f;
     public Transform detectPoint;
@@ -120,6 +123,7 @@ public class Boss : MonoBehaviour
     {
         if (isDead) return;
         maxHealth -= damage;
+        healthBar.value = maxHealth;
         animator.SetTrigger("Damage"); // Совпадает с твоим параметром "Damage"
     }
 

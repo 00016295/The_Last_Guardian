@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Boss
   maxHealth: 15
   healthBarUI: {fileID: 0}
-  attackCooldown: 1
+  attackCooldown: 3
   attackPoint: {fileID: 5611784197737910310}
   attackRadius: 1
   whatIsPlayer:

@@ -205,6 +205,11 @@ public class Player : MonoBehaviour
                     collinfo.gameObject.GetComponent<Enemy>().TakeDamage(5); // Example damage value
 
                 }
+                if (collinfo.gameObject.GetComponent<Boss>() != null)
+                {
+                    collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
+
+                }
             }
             if (isGround == false)
             {
