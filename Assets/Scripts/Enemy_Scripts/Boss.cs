@@ -5,7 +5,7 @@ using System.Collections;
 public class Boss : MonoBehaviour
 {
     // Health Settings
-    public int maxHealth = 15;
+    public int maxHealth = 100;
     public GameObject healthBarUI; 
     private bool isDead = false;
     public Slider healthBar;
@@ -82,13 +82,16 @@ public class Boss : MonoBehaviour
         nextAttackTime = Time.time + attackCooldown;
     }
 
-    // Метод вызывается из анимации через Animation Event (событие "Attack")
     public void Attack()
     {
         Collider2D collinfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, whatIsPlayer);
-        if (collinfo && collinfo.GetComponent<Player>() != null)
+
+        if (collinfo)
         {
-            collinfo.GetComponent<Player>().TakeDamage(5);
+            if (collinfo.gameObject.GetComponent<Player>() != null)
+            {
+                collinfo.gameObject.GetComponent<Player>().TakeDamage(5); 
+            }
         }
     }
 
@@ -106,7 +109,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-    void Flip() // Проверка края платформы
+    void Flip() 
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(detectPoint.position, Vector2.down, distance, whatIsGround);
         if (hitInfo.collider == null)
@@ -122,9 +125,10 @@ public class Boss : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (isDead) return;
+        Debug.Log("Босс получил урон! Текущее здоровье: " + maxHealth); 
         maxHealth -= damage;
-        healthBar.value = maxHealth;
-        animator.SetTrigger("Damage"); // Совпадает с твоим параметром "Damage"
+        if (healthBar != null) healthBar.value = maxHealth;
+        animator.SetTrigger("Damage");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

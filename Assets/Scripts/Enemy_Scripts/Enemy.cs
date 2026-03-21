@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -173,12 +174,11 @@ public class Enemy : MonoBehaviour
         StartCoroutine(ExecuteDeath());
     }
 
-    System.Collections.IEnumerator ExecuteDeath()
+    IEnumerator ExecuteDeath()
     {
         Debug.Log("Враг умирает..."); //
 
-        // 1. Запускаем анимацию смерти
-        // Убедитесь, что в Аниматоре есть триггер "death"
+        
         animator.SetBool("isDead",true);
 
         // 2. Ждем 3 секунды

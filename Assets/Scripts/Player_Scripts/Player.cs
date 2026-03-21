@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     public LayerMask whatIsEnemy;
 
 
+
     // Ground check variables
     public Transform groundCheckPoint; 
     public float groundCheckRadius = 0.2f; 
@@ -205,11 +206,7 @@ public class Player : MonoBehaviour
                     collinfo.gameObject.GetComponent<Enemy>().TakeDamage(5); // Example damage value
 
                 }
-                if (collinfo.gameObject.GetComponent<Boss>() != null)
-                {
-                    collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
-
-                }
+               
             }
             if (isGround == false)
             {
@@ -316,9 +313,9 @@ public class Player : MonoBehaviour
         {
             rb.gravityScale = 1f;
 
-            if (isDodging) return; // Если катимся — физику движения не трогаем
+            if (isDodging) return; 
 
-            // Если не в блоке — двигаемся, если в блоке — стоим
+            
             if (!isBlocking)
             {
                 rb.linearVelocity = new Vector2(movement * speed, rb.linearVelocity.y);
@@ -350,7 +347,7 @@ public class Player : MonoBehaviour
     //Jump Script
     void Jump()
     {
-        if (total_Jumps > 0) // Верни эту проверку!
+        if (total_Jumps > 0) 
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
             rb.linearVelocityY = jumpForce;
@@ -435,6 +432,11 @@ public class Player : MonoBehaviour
                 collinfo.gameObject.GetComponent<Enemy>().TakeDamage(5); // Example damage value
 
             }
+            if (collinfo.gameObject.GetComponent<Boss>() != null)
+            {
+                collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
+
+            }
         }
     }
 
@@ -449,13 +451,18 @@ public class Player : MonoBehaviour
                 collinfo.gameObject.GetComponent<Enemy>().TakeDamage(10); // Example damage value for heavy attack
 
             }
+            if (collinfo.gameObject.GetComponent<Boss>() != null)
+            {
+                collinfo.gameObject.GetComponent<Boss>().TakeDamage(10); // Example damage value for heavy attack
+
+            }
         }
     }
     public void TakeDamage(int damage)
     {
         if(isBlocking || isDodging)
         {
-            Debug.Log("Атака заблокирована!");
+            
             return; // No damage taken if blocking
         }
         if(maxHealth <= 0)
@@ -499,6 +506,7 @@ public class Player : MonoBehaviour
 
         // for the duration of the dodge, ignore collisions between the player and enemies
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), true);
         float originalGravity = rb.gravityScale;
         
         rb.linearVelocity = new Vector2(dodgeDirection * dodge_force, 0f);
@@ -506,6 +514,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(dodge_duration);
         // After the dodge duration, re-enable collisions and reset the player's state
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
         rb.gravityScale = originalGravity;
         isDodging = false;
     }
@@ -515,23 +524,19 @@ public class Player : MonoBehaviour
         isClimbing = false;
         animator.SetBool("is_climbing", false);
 
-        // 1. Полностью выключаем физику и управление
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
 
-        // 2. Запускаем анимацию
-        animator.Play("Player_pullup"); // Используем Play вместо Trigger для надежности
+        animator.Play("Player_pullup"); 
 
-        // 3. Ждем (на видео твоя анимация длится примерно 0.6-0.8 сек)
+        
         yield return new WaitForSeconds(0.61f);
 
-        // 4. Перемещаем
         float direction = isFacingRight ? 1f : -1f;
         transform.position += new Vector3(ledgeOffset.x * direction, ledgeOffset.y, 0);
 
-        // 5. Возвращаем всё как было
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.linearVelocity = Vector2.zero; // Сбрасываем скорость после телепортации
+        rb.linearVelocity = Vector2.zero; 
         isLedgeClimbing = false;
 
         Debug.Log("Залез!");
