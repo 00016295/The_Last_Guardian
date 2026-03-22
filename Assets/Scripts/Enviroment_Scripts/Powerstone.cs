@@ -1,16 +1,24 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Powerstone : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
+        // Проверяем, что в триггер зашел именно игрок
+        if (collision.CompareTag("Player"))
+        {
+            // Пытаемся найти скрипт Player на объекте, который вошел в триггер
+            Player playerScript = collision.GetComponent<Player>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
     }
 }

@@ -125,11 +125,17 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        maxHealth -= damage; // Reduce the enemy's health by the damage amount
-        animator.SetTrigger("damage"); // Trigger the "Hurt" animation in the Animator
+        
+        if (isDead) return;
+
+        maxHealth -= damage;
+        animator.SetTrigger("damage");
+
         if (maxHealth <= 0)
         {
-            return; // Call the Die method if health is zero or less
+            
+            isDead = true;
+            Die();
         }
     }
 
@@ -167,11 +173,18 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
-        
-        
+        Collider2D coll = GetComponent<Collider2D>();
+        if (coll != null) coll.enabled = false;
 
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero; 
+            rb.simulated = false;      
+        }
         // Запускаем корутину
         StartCoroutine(ExecuteDeath());
+        
     }
 
     IEnumerator ExecuteDeath()
@@ -181,9 +194,13 @@ public class Enemy : MonoBehaviour
         
         animator.SetBool("isDead",true);
 
-        // 2. Ждем 3 секунды
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
 
+        if (GetComponent<EnemyLoot>() != null)
+        {
+            GetComponent<EnemyLoot>().DropLoot();
+        }
+        yield return new WaitForSeconds(1.5f);
         // 3. Удаляем объект
         Destroy(gameObject); //
     }

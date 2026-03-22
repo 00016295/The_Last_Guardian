@@ -141,7 +141,7 @@ public class Boss : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInAttackRange = true;
-            if (healthBarUI != null) healthBarUI.SetActive(true); // Показываем здоровье
+            if (healthBarUI != null) healthBarUI.SetActive(true); 
 
             if (ArenaWalls != null) ArenaWalls.SetActive(true);
         }
@@ -152,7 +152,8 @@ public class Boss : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerInAttackRange = false;
-            if (healthBarUI != null) healthBarUI.SetActive(false); // Прячем здоровье
+            
+
         }
     }
     
@@ -160,12 +161,13 @@ public class Boss : MonoBehaviour
     {
         if (healthBarUI != null) healthBarUI.SetActive(false);
         StartCoroutine(ExecuteDeath());
+        if (ArenaWalls != null) ArenaWalls.SetActive(false);
     }
 
     IEnumerator ExecuteDeath()
     {
         animator.SetBool("Is_Dead", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Player"), true);
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1106717034276241290}
   - component: {fileID: 4558661250959772675}
   - component: {fileID: 6699999404543263721}
+  - component: {fileID: 8894716035519899145}
   m_Layer: 6
   m_Name: Green_Goblin
   m_TagString: Enemy
@@ -267,6 +268,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.1078687, y: 3.0568557}
   m_EdgeRadius: 0
+--- !u!114 &8894716035519899145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377851567202466200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec26012bda079d4428da383cc2a5d545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  lootPrefab: {fileID: 0}
+  chance: 100
 --- !u!1 &6492760956404360822
 GameObject:
   m_ObjectHideFlags: 0
