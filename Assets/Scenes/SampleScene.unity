@@ -1222,22 +1222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2080500301040139020, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3520010885655777340, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 794844535}
-    - target: {fileID: 3520010885655777340, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
-      propertyPath: heavyAttackRadius
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3520010885655777340, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
-      propertyPath: whatIsEnemy.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 5161761469886768206, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.1
@@ -1278,18 +1266,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6493345175748200708, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 6493345175748200708, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476168897434353329, guid: 96311e57063d60349ae1d5ea0f9dd15c, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1307,10 +1283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heal
       objectReference: {fileID: 0}
-    - target: {fileID: 6150411643857590698, guid: b96450752ec24ca4b84d6bc1b2fd0983, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1049461823314036041, guid: 4eb2b3bbd757c0a4cb5d366c0750bf69, type: 3}
     - target: {fileID: 8724599756895175501, guid: b96450752ec24ca4b84d6bc1b2fd0983, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.53
@@ -1382,6 +1354,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3501166666445950000, guid: 60d24a145fea7ab4faf8099804565994, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877129026256724637, guid: 60d24a145fea7ab4faf8099804565994, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5984164993280843796, guid: 60d24a145fea7ab4faf8099804565994, type: 3}
@@ -1477,6 +1453,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1550915617774676661, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0.16666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550915617774676661, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0.16666669
+      objectReference: {fileID: 0}
     - target: {fileID: 3887854869242578063, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
       propertyPath: m_Name
       value: Level
@@ -5377,6 +5361,14 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[4032].second.m_TileSpriteIndex
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 4154313539841059610, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0.16666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 4154313539841059610, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0.16666669
+      objectReference: {fileID: 0}
     - target: {fileID: 4445162728177128917, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5416,6 +5408,14 @@ PrefabInstance:
     - target: {fileID: 4445162728177128917, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671195530016090050, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0.16666669
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671195530016090050, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0.16666669
       objectReference: {fileID: 0}
     - target: {fileID: 8229614105869394197, guid: 4340b1c9371a7d143a8d343c084eb4f9, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_Data

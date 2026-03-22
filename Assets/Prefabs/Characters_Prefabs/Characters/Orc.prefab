@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 6435211178128683816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.26, y: -1.25, z: 0}
+  m_LocalPosition: {x: -0.79, y: -1.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -243,7 +243,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.039485335, y: -0.010145009}
+  m_Offset: {x: 0.039485335, y: 0.0494743}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.31468374, y: 0.50859743}
@@ -253,7 +253,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3820512, y: 2.8528934}
+  m_Size: {x: 1.3820512, y: 2.733655}
   m_EdgeRadius: 0
 --- !u!61 &8269559817878635894
 BoxCollider2D:
@@ -313,10 +313,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf84fcb211915d478ad934d23d18807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss
+  ArenaWalls: {fileID: 0}
   maxHealth: 100
   healthBarUI: {fileID: 0}
   healthBar: {fileID: 0}
-  attackCooldown: 5
+  attackCooldown: 0.5
   attackPoint: {fileID: 5611784197737910310}
   attackRadius: 1
   whatIsPlayer:

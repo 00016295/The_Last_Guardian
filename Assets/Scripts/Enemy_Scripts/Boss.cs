@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour
 
 
     // Attack Settings
-    public float attackCooldown = 5f;
+    public float attackCooldown = 0.5f;
     private float nextAttackTime = 1f;
     public Transform attackPoint;
     public float attackRadius = 1f;
@@ -38,7 +38,7 @@ public class Boss : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         if (healthBarUI != null) healthBarUI.SetActive(false); // Прячем UI в начале
-        if (ArenaWalls != null) ArenaWalls.SetActive(true);
+        if (ArenaWalls != null) ArenaWalls.SetActive(false);
     }
 
     void Update()
@@ -130,7 +130,7 @@ public class Boss : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (isDead) return;
-        Debug.Log("Босс получил урон! Текущее здоровье: " + maxHealth); 
+         
         maxHealth -= damage;
         if (healthBar != null) healthBar.value = maxHealth;
         animator.SetTrigger("Damage");
@@ -165,18 +165,10 @@ public class Boss : MonoBehaviour
     IEnumerator ExecuteDeath()
     {
         animator.SetBool("Is_Dead", true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.5f);
 
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(nextSceneIndex);
-        }
-        //else
-        //{
-        //    Debug.Log("Игра окончена! Вы победили всех.");
-        //    SceneManager.LoadScene("MainMenu"); 
-        //}
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Player"), true);
+
 
     }
 

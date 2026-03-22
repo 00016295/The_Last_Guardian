@@ -162,7 +162,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.21318185, y: 0.10962224}
+  m_Offset: {x: -0.21318185, y: 0.25939348}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.26, y: 0.25}
@@ -172,7 +172,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3288743, y: 1.7561612}
+  m_Size: {x: 1.3288743, y: 1.4566188}
   m_EdgeRadius: 0
 --- !u!95 &2208623479416512462
 Animator:
@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ec8c663e023d3458a8c9c8dcb2333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  healthBar: {fileID: 0}
+  maxHealth: 100
   speed: 7
   movement: 0
   jumpForce: 5
@@ -218,10 +220,10 @@ MonoBehaviour:
   attackPoint: {fileID: 2653454297433237653}
   heavyAttackPoint: {fileID: 6493345175748200708}
   attackradius: 1
-  heavyAttackRadius: 0.5
+  heavyAttackRadius: 0.7
   whatIsEnemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   groundCheckPoint: {fileID: 9055496879781976929}
   groundCheckRadius: 0.2
   groundLayer:
@@ -377,7 +379,7 @@ GameObject:
   m_Layer: 7
   m_Name: HeavyAttackPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -390,7 +392,7 @@ Transform:
   m_GameObject: {fileID: 8476168897434353329}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.94, y: 0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
