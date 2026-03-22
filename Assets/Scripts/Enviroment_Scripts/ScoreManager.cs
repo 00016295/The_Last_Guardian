@@ -29,4 +29,10 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = Score.ToString();
         }
     }
+    public void ResetScore()
+    {
+        Score = 0; // Обнуляем переменную счета
+        UpdateScoreText(); // Обновляем текст на экране
+        Debug.Log("Очки потеряны!");
+    }
 }

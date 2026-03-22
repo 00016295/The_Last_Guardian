@@ -483,6 +483,11 @@ public class Player : MonoBehaviour
         {
             return; // Call the Die method if health is zero or less
         }
+        if (ScoreManager.Instance != null && ScoreManager.Instance.Score > 0)
+        {
+            ScoreManager.Instance.ResetScore();
+        }
+
     }
     void Die()
     {

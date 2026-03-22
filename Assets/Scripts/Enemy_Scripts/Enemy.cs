@@ -130,6 +130,10 @@ public class Enemy : MonoBehaviour
 
         maxHealth -= damage;
         animator.SetTrigger("damage");
+        if (ScoreManager.Instance != null && ScoreManager.Instance.Score > 0)
+        {
+            ScoreManager.Instance.ResetScore();
+        }
 
         if (maxHealth <= 0)
         {
