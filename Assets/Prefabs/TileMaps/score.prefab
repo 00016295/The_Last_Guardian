@@ -167,8 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e076060e425be1a4aa935d8df2dde236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  magnetRadius: 2
+  magnetRadius: 4
   moveSpeed: 10
+  triggerCollider: {fileID: 1464037941761447707}
+  physicalCollider: {fileID: 7038838157958794515}
 --- !u!50 &5520705152201196156
 Rigidbody2D:
   serializedVersion: 5
