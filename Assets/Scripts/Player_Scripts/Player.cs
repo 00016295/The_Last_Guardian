@@ -513,7 +513,6 @@ public class Player : MonoBehaviour
         }
 
         healthBar.value = currentHealth;
-        Debug.Log("Полечился! Текущее здоровье: " + currentHealth);
     }
 
     IEnumerator Dodge(float inputDir)
@@ -526,7 +525,6 @@ public class Player : MonoBehaviour
 
         // for the duration of the dodge, ignore collisions between the player and enemies
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), true);
         float originalGravity = rb.gravityScale;
         
         rb.linearVelocity = new Vector2(dodgeDirection * dodge_force, 0f);
@@ -534,7 +532,6 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(dodge_duration);
         // After the dodge duration, re-enable collisions and reset the player's state
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
         rb.gravityScale = originalGravity;
         isDodging = false;
     }
