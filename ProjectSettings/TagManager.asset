@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Enemy
   - Score
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UiHealth
   - Boss
   - Loot
-  - 
+  - firetrap
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2495567185
+    locked: 0
   - name: clouds
     uniqueID: 481274405
     locked: 0
@@ -49,6 +53,9 @@ TagManager:
     locked: 0
   - name: Water
     uniqueID: 1483399385
+    locked: 0
+  - name: firetrap
+    uniqueID: 3076056337
     locked: 0
   - name: Ground
     uniqueID: 1755510449

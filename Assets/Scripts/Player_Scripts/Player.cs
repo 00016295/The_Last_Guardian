@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+﻿using System.Collections;
+using System.Dynamic;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     // Health variables
@@ -14,8 +15,8 @@ public class Player : MonoBehaviour
     private bool isGround;
     private Animator animator;
     private bool isBlocking;
-
-
+    public GameObject gameOverScreen;
+    
     //movement variables
     public float speed = 7f;
     public float movement;
@@ -84,6 +85,7 @@ public class Player : MonoBehaviour
         animator = this.gameObject.GetComponent<Animator>();
         isBlocking = false;
         isDodging = false; 
+        
     }
 
    
@@ -433,11 +435,7 @@ public class Player : MonoBehaviour
                 collinfo.gameObject.GetComponent<Enemy>().TakeDamage(5); // Example damage value
 
             }
-            if (collinfo.gameObject.GetComponent<Boss>() != null)
-            {
-                collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
-
-            }
+            
         }
     }
 
@@ -452,11 +450,7 @@ public class Player : MonoBehaviour
                 collinfo.gameObject.GetComponent<Enemy>().TakeDamage(10); // Example damage value for heavy attack
 
             }
-            if (collinfo.gameObject.GetComponent<Boss>() != null)
-            {
-                collinfo.gameObject.GetComponent<Boss>().TakeDamage(10); // Example damage value for heavy attack
-
-            }
+            
         }
     }
     public void TakeDamage(int damage)
@@ -491,9 +485,24 @@ public class Player : MonoBehaviour
     }
     void Die()
     {
+        if (gameOverScreen != null)
+        {
+            gameOverScreen.SetActive(true); // Показываем экран смерти
+            Time.timeScale = 0f;           // Останавливаем мир (физику, врагов)
+            Cursor.lockState = CursorLockMode.None; // Освобождаем мышку
+            Cursor.visible = true;         // Делаем курсор видимым
+        }
+
+        // Destroy(gameObject); // ЭТУ СТРОКУ ЛУЧШЕ УБРАТЬ или заменить на отключение графики
+        // Если удалить объект игрока, скрипт на нем перестанет работать.
+        // Лучше просто выключить скрипт управления и визуальную часть:
+        this.enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
         Debug.Log("Enemy has died"); // Log message for debugging purposes
-        Destroy(gameObject); // Destroy the enemy game object
+        Destroy(gameObject);
+       
     }
+    
 
     // Method to reset the combo step after a delay
     void ResetCombo()
@@ -570,6 +579,10 @@ public class Player : MonoBehaviour
             total_Jumps = jump_Count; // Reset the total jumps when the player collides with the ground
             animator.SetBool("Jump", false); // Set the "Jump" parameter in the Animator to false to end the jump animation
 
+        }
+        if(collision.gameObject.tag == "trap")
+        {
+           TakeDamage(10); 
         }
     }
 

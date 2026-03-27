@@ -1,9 +1,11 @@
 
 using System.Collections;
+using Unity.Burst.Intrinsics;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 public class Boss : MonoBehaviour
 {
     public GameObject ArenaWalls;
@@ -171,7 +173,7 @@ public class Boss : MonoBehaviour
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Player"), true);
 
-
+       
     }
 
     private void OnDrawGizmosSelected()

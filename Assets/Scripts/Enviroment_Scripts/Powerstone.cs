@@ -2,11 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Powerstone : MonoBehaviour
 {
+    public LevelComplete resultsUI; // Перетащите сюда ваш UI из иерархии
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         // Проверяем, что в триггер зашел именно игрок
         if (collision.CompareTag("Player"))
         {
+            Time.timeScale = 0;
             // Пытаемся найти скрипт Player на объекте, который вошел в триггер
             Player playerScript = collision.GetComponent<Player>();
 
@@ -19,6 +22,7 @@ public class Powerstone : MonoBehaviour
             {
                 SceneManager.LoadScene("Main Menu");
             }
+
         }
     }
 }
