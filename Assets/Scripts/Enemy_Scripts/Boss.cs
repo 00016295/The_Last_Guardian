@@ -39,6 +39,11 @@ public class Boss : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        if (healthBar != null)
+        {
+            healthBar.maxValue = maxHealth;
+            healthBar.value = maxHealth;
+        } 
         if (healthBarUI != null) healthBarUI.SetActive(false); // Прячем UI в начале
         if (ArenaWalls != null) ArenaWalls.SetActive(false);
     }
@@ -131,11 +136,19 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+      
         if (isDead) return;
-         
+
         maxHealth -= damage;
         if (healthBar != null) healthBar.value = maxHealth;
         animator.SetTrigger("Damage");
+
+        if (maxHealth <= 0)
+        {
+
+            isDead = true;
+            Die();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -256,7 +256,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.6390662, y: 0.6705828}
+  m_Offset: {x: -1.3609333, y: 0.6705828}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.34157965, y: 0.4790675}
@@ -266,7 +266,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.1078687, y: 3.0568557}
+  m_Size: {x: 16.107868, y: 3.0568557}
   m_EdgeRadius: 0
 --- !u!114 &8894716035519899145
 MonoBehaviour:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec26012bda079d4428da383cc2a5d545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  lootPrefab: {fileID: 0}
+  lootPrefab: {fileID: 213413349614767840, guid: 83fbdc3c43280ba4187b69fdae65e551, type: 3}
   chance: 100
 --- !u!1 &6492760956404360822
 GameObject:

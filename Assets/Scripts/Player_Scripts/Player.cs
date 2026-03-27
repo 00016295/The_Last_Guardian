@@ -209,7 +209,12 @@ public class Player : MonoBehaviour
                     collinfo.gameObject.GetComponent<Enemy>().TakeDamage(5); // Example damage value
 
                 }
-               
+                if(collinfo.gameObject.GetComponent<Boss>() != null)
+                {
+                    collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
+
+                }
+
             }
             if (isGround == false)
             {
@@ -255,8 +260,13 @@ public class Player : MonoBehaviour
 
                     }
                 }
-                
-                
+               if(collinfo.gameObject.GetComponent<Boss>() != null)
+                {
+                    collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
+
+                }
+
+
             }
             else if (pressedRight || pressedLeft && !isDodging)
             {
@@ -432,10 +442,14 @@ public class Player : MonoBehaviour
         {
             if(collinfo.gameObject.GetComponent<Enemy>()!= null)
             {
-                collinfo.gameObject.GetComponent<Enemy>().TakeDamage(5); // Example damage value
+                collinfo.gameObject.GetComponent<Enemy>().TakeDamage(5); 
 
             }
-            
+            if(collinfo.gameObject.GetComponent<Boss>() != null)
+                {
+                collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
+
+            }
         }
     }
 
@@ -447,10 +461,14 @@ public class Player : MonoBehaviour
         {
             if (collinfo.gameObject.GetComponent<Enemy>() != null)
             {
-                collinfo.gameObject.GetComponent<Enemy>().TakeDamage(10); // Example damage value for heavy attack
+                collinfo.gameObject.GetComponent<Enemy>().TakeDamage(10); 
 
             }
-            
+            if(collinfo.gameObject.GetComponent<Boss>() != null)
+                {
+                collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
+
+            }
         }
     }
     public void TakeDamage(int damage)
@@ -493,9 +511,7 @@ public class Player : MonoBehaviour
             Cursor.visible = true;         // Делаем курсор видимым
         }
 
-        // Destroy(gameObject); // ЭТУ СТРОКУ ЛУЧШЕ УБРАТЬ или заменить на отключение графики
-        // Если удалить объект игрока, скрипт на нем перестанет работать.
-        // Лучше просто выключить скрипт управления и визуальную часть:
+        
         this.enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
         Debug.Log("Enemy has died"); // Log message for debugging purposes
