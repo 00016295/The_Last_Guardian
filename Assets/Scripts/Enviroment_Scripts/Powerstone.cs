@@ -9,7 +9,7 @@ public class Powerstone : MonoBehaviour
         // Проверяем, что в триггер зашел именно игрок
         if (collision.CompareTag("Player"))
         {
-            Time.timeScale = 0;
+            Time.timeScale = 1;
             // Пытаемся найти скрипт Player на объекте, который вошел в триггер
             Player playerScript = collision.GetComponent<Player>();
 

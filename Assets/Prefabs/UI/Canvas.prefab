@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 5883850224346529082}
   - component: {fileID: 4508447687921203279}
   - component: {fileID: 3293877024618437440}
+  - component: {fileID: 6435540612856752097}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -543,6 +544,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   PauseGame: 0
   PauseGameMenu: {fileID: 3877129026256724637}
+--- !u!114 &6435540612856752097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952188533720609763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc1eb39e32d2ad449b145181d4d2825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  resultsPanel: {fileID: 4556904628245483898}
+  timeText: {fileID: 1068132688613537838}
+  hitsText: {fileID: 2051264536471876166}
 --- !u!1 &2179039128341859443
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7789934609688416420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -973,7 +989,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3922179542799351066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3685285618418572269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.80200005, y: 0.8852222}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 45.374695, y: -62.026398}
+  m_AnchoredPosition: {x: 45.374634, y: -62.02643}
   m_SizeDelta: {x: -125.201, y: 62.962}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8093962836559515015
@@ -1551,7 +1579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2348093131100525552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2282,7 +2310,7 @@ GameObject:
   - component: {fileID: 7448314925452862845}
   - component: {fileID: 7050322374212026144}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: GameOverUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

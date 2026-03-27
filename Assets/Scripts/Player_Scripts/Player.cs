@@ -3,6 +3,7 @@ using System.Dynamic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class Player : MonoBehaviour
 {
     // Health variables
@@ -16,7 +17,14 @@ public class Player : MonoBehaviour
     private Animator animator;
     private bool isBlocking;
     public GameObject gameOverScreen;
-    
+    private SpriteRenderer spriteRenderer;
+
+    // powerUp variables
+    public PowerUp powerUp;
+    public float basejumpforce;
+    private Coroutine PowerUpCoroutine;
+    public Color powerUpColor = Color.yellow;
+
     //movement variables
     public float speed = 7f;
     public float movement;
@@ -74,6 +82,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        basejumpforce = jumpForce;
         currentHealth = maxHealth; 
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth; ;
@@ -488,12 +498,12 @@ public class Player : MonoBehaviour
             Die(); 
             return;
         }
-        currentHealth -= damage; // Reduce the enemy's health by the damage amount
-        healthBar.value = currentHealth; // Update the health bar UI
-        animator.SetTrigger("Damage"); // Trigger the "Hurt" animation in the Animator
+        currentHealth -= damage;
+        healthBar.value = currentHealth;
+        animator.SetTrigger("Damage"); 
         if (currentHealth <= 0)
         {
-            return; // Call the Die method if health is zero or less
+            return; 
         }
         if (ScoreManager.Instance != null && ScoreManager.Instance.Score > 0)
         {
@@ -505,10 +515,10 @@ public class Player : MonoBehaviour
     {
         if (gameOverScreen != null)
         {
-            gameOverScreen.SetActive(true); // Показываем экран смерти
-            Time.timeScale = 0f;           // Останавливаем мир (физику, врагов)
-            Cursor.lockState = CursorLockMode.None; // Освобождаем мышку
-            Cursor.visible = true;         // Делаем курсор видимым
+            gameOverScreen.SetActive(true); 
+            Time.timeScale = 0f;          
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true;         
         }
 
         
@@ -583,7 +593,22 @@ public class Player : MonoBehaviour
 
         Debug.Log("Залез!");
     }
-
+    IEnumerator PowerUpTimer(float powerUpduration)
+    {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = powerUpColor; 
+        }
+        Debug.Log("Powerup");
+        yield return new WaitForSeconds(powerUpduration);
+        jumpForce = basejumpforce;
+        Debug.Log("poweroff");
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.white;
+        }
+        PowerUpCoroutine = null;
+    }
     
    
 
@@ -600,6 +625,18 @@ public class Player : MonoBehaviour
         {
            TakeDamage(10); 
         }
+        if(collision.gameObject.tag == "Powerup")
+        {
+            if (PowerUpCoroutine != null) 
+            StopCoroutine(PowerUpCoroutine);
+
+            jumpForce = powerUp.jumpForce;
+
+            PowerUpCoroutine = StartCoroutine(PowerUpTimer(powerUp.powerUpduration));
+
+            Destroy(collision.gameObject);
+        }
+        
     }
 
     private void OnDrawGizmosSelected()
