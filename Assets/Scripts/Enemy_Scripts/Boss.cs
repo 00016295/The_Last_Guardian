@@ -5,7 +5,6 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
 public class Boss : MonoBehaviour
 {
     public GameObject ArenaWalls;
