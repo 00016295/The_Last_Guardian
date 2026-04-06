@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     // Attack variables
     public Transform attackPoint;
     public Transform heavyAttackPoint;
-    public float attackradius = 1f;
+    public float attackradius = 0.5f;
     public float heavyAttackRadius = 0.5f;
     public LayerMask whatIsEnemy;
 

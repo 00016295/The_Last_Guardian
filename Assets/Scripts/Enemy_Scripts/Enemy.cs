@@ -132,7 +132,8 @@ public class Enemy : MonoBehaviour
         
         if (maxHealth <= 0)
         {
-            
+            Collider2D coll = GetComponent<Collider2D>();
+            if (coll != null) coll.enabled = false;
             isDead = true;
             Die();
         }
@@ -172,8 +173,7 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
-        Collider2D coll = GetComponent<Collider2D>();
-        if (coll != null) coll.enabled = false;
+        
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)

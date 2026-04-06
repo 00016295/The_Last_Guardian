@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   enemyPrefab: {fileID: 0}
   numberOfEnemies: 5
-  spawnRadius: 5
+  spawnRadius: 2
 --- !u!61 &8605460683605947694
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -2.4999995}
+  m_Offset: {x: 0, y: -0.49999952}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -92,5 +92,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11, y: 6.000001}
+  m_Size: {x: 5, y: 2.000001}
   m_EdgeRadius: 0

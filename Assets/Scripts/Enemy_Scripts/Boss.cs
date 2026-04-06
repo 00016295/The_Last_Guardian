@@ -182,7 +182,10 @@ public class Boss : MonoBehaviour
     {
         animator.SetBool("Is_Dead", true);
         yield return new WaitForSeconds(2f);
-
+        if (GetComponent<EnemyLoot>() != null)
+        {
+            GetComponent<EnemyLoot>().DropLoot();
+        }
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Player"), true);
 
        
