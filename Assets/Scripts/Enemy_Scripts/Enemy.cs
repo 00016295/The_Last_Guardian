@@ -181,14 +181,12 @@ public class Enemy : MonoBehaviour
             rb.linearVelocity = Vector2.zero; 
             rb.simulated = false;      
         }
-        // Запускаем корутину
         StartCoroutine(ExecuteDeath());
         
     }
 
     IEnumerator ExecuteDeath()
     {
-        Debug.Log("Враг умирает..."); //
 
         
         animator.SetBool("isDead",true);
@@ -200,7 +198,6 @@ public class Enemy : MonoBehaviour
             GetComponent<EnemyLoot>().DropLoot();
         }
         yield return new WaitForSeconds(1.5f);
-        // 3. Удаляем объект
-        Destroy(gameObject); //
+        Destroy(gameObject); 
     }
 }

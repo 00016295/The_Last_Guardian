@@ -272,7 +272,7 @@ public class Player : MonoBehaviour
                 }
                if(collinfo.gameObject.GetComponent<Boss>() != null)
                 {
-                    collinfo.gameObject.GetComponent<Boss>().TakeDamage(5); // Example damage value
+                    collinfo.gameObject.GetComponent<Boss>().TakeDamage(10); // Example damage value
 
                 }
 
@@ -315,12 +315,10 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             rb.gravityScale = 0f;
-            // Важно: на время анимации делаем тело Kinematic, чтобы оно игнорировало все силы
             if (rb.bodyType != RigidbodyType2D.Kinematic) rb.bodyType = RigidbodyType2D.Kinematic;
             return;
         }
 
-        // Если не подтягиваемся, возвращаем Dynamic
         if (rb.bodyType == RigidbodyType2D.Kinematic && !isLedgeClimbing)
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
@@ -399,7 +397,6 @@ public class Player : MonoBehaviour
         animator.SetBool("Jump", true);
 
 
-        Debug.Log("Прыжок от стены!");
     }
 
     // Methods to play attack animations based on the combo step
@@ -524,7 +521,6 @@ public class Player : MonoBehaviour
         
         this.enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
-        Debug.Log("Enemy has died"); // Log message for debugging purposes
         Destroy(gameObject);
        
     }
@@ -558,14 +554,12 @@ public class Player : MonoBehaviour
         if (dodgeDirection > 0 && !isFacingRight) flip();
         else if (dodgeDirection < 0 && isFacingRight) flip();
 
-        // for the duration of the dodge, ignore collisions between the player and enemies
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
         float originalGravity = rb.gravityScale;
         
         rb.linearVelocity = new Vector2(dodgeDirection * dodge_force, 0f);
 
         yield return new WaitForSeconds(dodge_duration);
-        // After the dodge duration, re-enable collisions and reset the player's state
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
         rb.gravityScale = originalGravity;
         isDodging = false;
@@ -617,8 +611,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            total_Jumps = jump_Count; // Reset the total jumps when the player collides with the ground
-            animator.SetBool("Jump", false); // Set the "Jump" parameter in the Animator to false to end the jump animation
+            total_Jumps = jump_Count; 
+            animator.SetBool("Jump", false); 
 
         }
         if(collision.gameObject.tag == "trap")
@@ -643,7 +637,6 @@ public class Player : MonoBehaviour
     {
         if (groundCheckPoint != null)
         {
-            // Draw a red wire sphere at the ground check point to visualize the ground check area
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
         }

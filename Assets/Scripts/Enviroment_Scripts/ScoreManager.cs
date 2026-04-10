@@ -31,8 +31,8 @@ public class ScoreManager : MonoBehaviour
     }
     public void ResetScore()
     {
-        Score = 0; // Обнуляем переменную счета
-        UpdateScoreText(); // Обновляем текст на экране
-        Debug.Log("Очки потеряны!");
+        Score = 0; 
+        UpdateScoreText();
+        
     }
 }
