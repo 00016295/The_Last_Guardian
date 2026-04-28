@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2208623479416512462}
   - component: {fileID: 3520010885655777340}
   - component: {fileID: 3019793069464894669}
+  - component: {fileID: 4175697672954212505}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -210,6 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   healthBar: {fileID: 0}
+  runSource: {fileID: 0}
+  runSounds: {fileID: 0}
   maxHealth: 100
   gameOverScreen: {fileID: 0}
   powerUp: {fileID: 11400000, guid: 7f0edb094a3dddd458c4aefac27d64c2, type: 2}
@@ -279,6 +282,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.07511765, y: -0.762432}
   m_Radius: 0.2923283
+--- !u!114 &4175697672954212505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080500301040139020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb07a38a12d68ec458f4155b5143919f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement_Sound
+  footStepSFX: {fileID: 8300000, guid: d1b7c39027945a84f922a02134dcbc54, type: 3}
 --- !u!1 &4215013543641431575
 GameObject:
   m_ObjectHideFlags: 0

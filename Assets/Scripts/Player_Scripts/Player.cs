@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Dynamic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 public class Player : MonoBehaviour
 {
     // Health variables
     public Slider healthBar;
     private int currentHealth;
 
+    
+
+
     // Components
     public int maxHealth = 100;
     private Rigidbody2D rb;
-    private bool isGround;
+    public bool isGround;
     private Animator animator;
     private bool isBlocking;
     public GameObject gameOverScreen;
@@ -348,7 +352,7 @@ public class Player : MonoBehaviour
         }
 
     }
-
+   
 
     // Method to flip the player's sprite based on movement direction
     void flip()
@@ -483,7 +487,7 @@ public class Player : MonoBehaviour
         if(isBlocking || isDodging)
         {
             
-            return; // No damage taken if blocking
+            return; 
         }
         if(currentHealth <= 0)
         {
@@ -631,6 +635,12 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
         
+        if (collision.gameObject.CompareTag("Restart"))
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
+        }
+
     }
 
     private void OnDrawGizmosSelected()

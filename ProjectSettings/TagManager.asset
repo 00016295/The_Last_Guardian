@@ -9,6 +9,7 @@ TagManager:
   - Score
   - trap
   - Powerup
+  - Restart
   layers:
   - Default
   - TransparentFX
